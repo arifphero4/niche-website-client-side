@@ -2,7 +2,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import MuiButton from '../../../styleComponent/ButtonStyle';
 import bg from '../../../images/bg.jpg'
-import banner from '../../../images/banner.jpeg'
+import banner from '../../../images/banner.png'
 
     const style = {
         minHeight: 500,

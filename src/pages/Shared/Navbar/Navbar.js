@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { useTheme } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
@@ -14,11 +14,14 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import useAuth from '../../../hooks/useAuth';
 
 
 
 
 const Navbar = () => {
+    const {user, logOut} = useAuth();
+
     const theme = useTheme();
     const useStyle = makeStyles({
         navItem:{
@@ -69,7 +72,13 @@ const Navbar = () => {
                 <Link className={navItem} to="/home"><Button color="inherit">Home</Button></Link>
                 <Link className={navItem} to="/explore"><Button color="inherit">Explore</Button></Link>
                 <Link className={navItem} to="/dashboard"><Button color="inherit">Dashboard</Button></Link>
-                <Link className={navItem} to="/login"><Button color="inherit">Login</Button></Link>
+                
+                {
+                    user?.email?
+                    <Button onClick={logOut} color="inherit">Logout</Button>
+                    :
+                    <NavLink className={navItem} to="/login"><Button color="inherit">Login</Button></ NavLink>
+                }
             </Box>
             
             <IconButton
