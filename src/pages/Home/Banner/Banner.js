@@ -27,7 +27,7 @@ const Banner = () => {
                         <Typography variant="body1" sx={{lineHeight: 1.5, my: 3, color:'white'}}>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, expedita inventore ullam alias a molestiae. Exercitationem maiores ab consequuntur! Sit.
                         </Typography>
-                        <MuiButton> Explore More </MuiButton>
+                        <MuiButton variant="contained"> Explore More </MuiButton>
                         
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6}>

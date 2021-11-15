@@ -15,29 +15,32 @@ const useStyle = makeStyles({
             background: '#E5385A !important',
             color: '#fff !important'
         }
+    },
+    textColor:{
+        color: 'white'
     }
 })
 const Footer = () => {
-    const { socialIcon } = useStyle();
+    const { socialIcon, textColor} = useStyle();
     return (
         <footer>
-            <Container >
+            <Container style={{background:'#263238'}} >
                 <Grid container spacing={3} sx={{ my: 3 }}>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List >
                         <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Quick Links</Typography>
-                            <ListItemText>Home</ListItemText>
-                            <ListItemText>About</ListItemText>
-                            <ListItemText>Explore</ListItemText>
-                            <ListItemText>Dashboard</ListItemText>
-                            <ListItemText>Register</ListItemText>
+                            <ListItemText className={textColor}>Home</ListItemText>
+                            <ListItemText className={textColor}>About</ListItemText>
+                            <ListItemText className={textColor}>Explore</ListItemText>
+                            <ListItemText className={textColor}>Dashboard</ListItemText>
+                            <ListItemText className={textColor}>Register</ListItemText>
                         </List>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List>
                             <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Services</Typography>
-                            <ListItemText >Emergency Dental Care</ListItemText>
-                            <ListItemText>Check Up</ListItemText>
+                            <ListItemText className={textColor}>Emergency Dental Care</ListItemText>
+                            <ListItemText className={textColor}>Check Up</ListItemText>
                             
                         </List>
                     </Grid>
@@ -45,8 +48,8 @@ const Footer = () => {
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List>
                             <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Our Address</Typography>
-                            <ListItemText>New York - 101010 Hudson</ListItemText>
-                            <ListItemText>Yards</ListItemText>
+                            <ListItemText className={textColor}>New York - 101010 Hudson</ListItemText>
+                            <ListItemText className={textColor}>Yards</ListItemText>
                         </List>
                         <IconButton className={socialIcon}>
                             <GoogleIcon />
@@ -57,14 +60,14 @@ const Footer = () => {
                         <IconButton className={socialIcon}>
                             <InstagramIcon />
                         </IconButton>
-                        <Typography>Call Now</Typography>
+                        <Typography className={textColor}>Call Now</Typography>
                         <MuiButton variant="contained">+8065432145</MuiButton>
                     </Grid>
                 </Grid>
-                <Typography sx={{ textAlign: 'center', py: 4 }} variant="subtitle2">Copyright &copy; {new Date().getFullYear()} All Rights Reserved</Typography>
+                <Typography className={textColor} sx={{ textAlign: 'center', py: 4, background:'black'}} variant="subtitle2"> Copyright &copy; 2021 All Rights Reserved</Typography>
             </Container>
         </footer>
     );
 };
-
+// {new Date().getFullYear()}
 export default Footer;

@@ -7,6 +7,8 @@ import {
 import Home from './pages/Home/Home/Home';
 import Explore from './pages/Explore/Explore';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Login from './pages/Login/Login/Login';
+import Register from './pages/Login/Register/Register';
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard></Dashboard>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
           </Route>
         </Switch>
       </Router>

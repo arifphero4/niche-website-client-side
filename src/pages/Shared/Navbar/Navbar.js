@@ -44,6 +44,9 @@ const Navbar = () => {
             textDecoration: 'none',
             color: 'green'
 
+        },
+        navColor:{
+        backgroundColor:'#263238'
         }
     })
     const {navItem, navIcon, navItemContainer, navLogo, mobileItem} = useStyle();
@@ -57,7 +60,7 @@ const Navbar = () => {
     return (
        <>
          <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar   position="static">
         <Toolbar>
           <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
@@ -66,6 +69,7 @@ const Navbar = () => {
                 <Link className={navItem} to="/home"><Button color="inherit">Home</Button></Link>
                 <Link className={navItem} to="/explore"><Button color="inherit">Explore</Button></Link>
                 <Link className={navItem} to="/dashboard"><Button color="inherit">Dashboard</Button></Link>
+                <Link className={navItem} to="/login"><Button color="inherit">Login</Button></Link>
             </Box>
             
             <IconButton
