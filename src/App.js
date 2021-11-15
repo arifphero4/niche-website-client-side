@@ -10,7 +10,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <Router>
         <Switch>
           <Route exact path="/">
