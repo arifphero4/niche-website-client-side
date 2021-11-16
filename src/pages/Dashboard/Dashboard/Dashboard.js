@@ -6,41 +6,58 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useAuth from '../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
+import { Button } from '@mui/material';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-    const {user} = useAuth();
+    const {user, logOut} = useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const useStyle = makeStyles({
+    navItem:{
+        textDecoration:'none'
+    }
+  })
+  const { navItem} = useStyle();
+
   const drawer = (
-    <div>
+    <div style={{marginLeft:'20px'}}>
       <Toolbar />
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      <Link className={navItem} to="/home"><Button>Home</Button></Link>
+      <Divider />
+      <Link className={navItem} to="/dashboard"><Button> Dashboard</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/makeAdmin"><Button> Make Admin </Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/makeProducts"><Button> Add Products</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/manageProducts"><Button>  Manage Products</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/manageOrders"><Button> Manage All Orders</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/myOrders"><Button> My Orders</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/review"><Button> Review</Button> </Link>
+      <Divider />
+      <Link className={navItem} to="/payment"><Button> Payment</Button> </Link>
+      <Divider />
+
+      <Link className={navItem} onClick={logOut} to="/makeProducts"><Button> Logout</Button> </Link>
+      <Divider />
+      
      
     </div>
   );
@@ -84,7 +101,7 @@ function Dashboard(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
