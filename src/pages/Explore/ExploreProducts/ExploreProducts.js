@@ -9,7 +9,7 @@ import MuiButton from '../../../styleComponent/ButtonStyle';
 
 
 const ExploreProducts = ({product}) => {
-    const {name, img, details, price} = product;
+    const {name, img, description, price} = product;
     return (
         <Grid item xs={12} sm={6} md={4}>
             <CardActionArea>
@@ -24,7 +24,7 @@ const ExploreProducts = ({product}) => {
                    {name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                   {details}
+                   {description}
                 </Typography>
                 <Typography variant="h4" >
                   $ {price}

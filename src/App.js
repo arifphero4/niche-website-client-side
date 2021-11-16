@@ -6,11 +6,13 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home/Home/Home';
 import Explore from './pages/Explore/Explore';
-import Dashboard from './pages/Dashboard/Dashboard';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import MakeProducts from './pages/Dashboard/MakeProducts/MakeProducts';
+
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/makeProducts">
+              <MakeProducts></MakeProducts>
             </Route>
           </Switch>
         </Router>
