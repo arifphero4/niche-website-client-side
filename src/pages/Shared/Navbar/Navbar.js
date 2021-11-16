@@ -30,7 +30,7 @@ const Navbar = () => {
         },
         navIcon:{
             [theme.breakpoints.up('sm')]: {
-               display: 'none'
+               display: 'none !important'
               }
         },
         navItemContainer:{
