@@ -13,6 +13,15 @@ import useAuth from '../../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 import { Button } from '@mui/material';
+import {Switch, Route,  useRouteMatch} from "react-router-dom"
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import MakeProducts from '../MakeProducts/MakeProducts';
+import ManageProducts from '../ManageProducts/ManageProducts';
+import ManageOrders from '../ManageOrders/ManageOrders';
+import MyOrders from '../MyOrders/MyOrders';
+import Review from '../Review/Review';
+import Payment from '../Payment/Payment';
+import DashboardHome from '../DashboardHome/DashboardHome';
 
 const drawerWidth = 240;
 
@@ -20,7 +29,8 @@ function Dashboard(props) {
   
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-    const {user, logOut} = useAuth();
+   const {user, logOut} = useAuth();
+  let {path, url} = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -38,21 +48,21 @@ function Dashboard(props) {
       <Divider />
       <Link className={navItem} to="/home"><Button>Home</Button></Link>
       <Divider />
-      <Link className={navItem} to="/dashboard"><Button> Dashboard</Button> </Link>
+      <Link className={navItem} to={`${url}`}><Button> Dashboard </Button> </Link>
       <Divider />
-      <Link className={navItem} to="/makeAdmin"><Button> Make Admin </Button> </Link>
+      <Link className={navItem} to={`${url}/makeAdmin`}><Button> Make Admin </Button> </Link>
       <Divider />
-      <Link className={navItem} to="/makeProducts"><Button> Add Products</Button> </Link>
+      <Link className={navItem} to={`${url}/makeProducts`}><Button> Add Products</Button> </Link>
       <Divider />
-      <Link className={navItem} to="/manageProducts"><Button>  Manage Products</Button> </Link>
+      <Link className={navItem} to={`${url}/manageProducts`}><Button>  Manage Products</Button> </Link>
       <Divider />
-      <Link className={navItem} to="/manageOrders"><Button> Manage All Orders</Button> </Link>
+      <Link className={navItem} to={`${url}/manageOrders`}><Button> Manage All Orders</Button> </Link>
       <Divider />
-      <Link className={navItem} to="/myOrders"><Button> My Orders</Button> </Link>
+      <Link className={navItem} to={`${url}/myOrder`}><Button> My Orders</Button> </Link>
       <Divider />
-      <Link className={navItem} to="/review"><Button> Review</Button> </Link>
+      <Link className={navItem} to={`${url}/review`}><Button> Review</Button> </Link>
       <Divider />
-      <Link className={navItem} to="/payment"><Button> Payment</Button> </Link>
+      <Link className={navItem} to={`${url}/payment`}><Button> Payment</Button> </Link>
       <Divider />
 
       <Link className={navItem} onClick={logOut} to="/makeProducts"><Button> Logout</Button> </Link>
@@ -74,7 +84,7 @@ function Dashboard(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -84,8 +94,8 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Dashboard {user.displayName}
+          <Typography  variant="h6" noWrap component="div">
+            Welcome {user.displayName}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -126,9 +136,32 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-          content here
-        </Typography>
+        <Switch>
+          <Route exact path={path}>
+            <DashboardHome></DashboardHome>
+          </Route>
+          <Route path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+          </Route>
+          <Route path={`${path}/makeProducts`}>
+            <MakeProducts></MakeProducts>
+          </Route>
+          <Route path={`${path}/manageProducts`}>
+            <ManageProducts></ManageProducts>
+          </Route>
+          <Route path={`${path}/manageOrders`}>
+            <ManageOrders></ManageOrders>
+          </Route>
+          <Route path={`${path}/myOrder`}>
+            <MyOrders></MyOrders>
+          </Route>
+          <Route path={`${path}/review`}>
+            <Review></Review>
+          </Route>
+          <Route path={`${path}/payment`}>
+            <Payment></Payment>
+          </Route>
+        </Switch>
        
       </Box>
     </Box>
