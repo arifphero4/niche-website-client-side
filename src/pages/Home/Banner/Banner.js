@@ -1,8 +1,9 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid,  Typography } from '@mui/material';
 import React from 'react';
 import MuiButton from '../../../styleComponent/ButtonStyle';
 import bg from '../../../images/bg.jpg'
 import banner from '../../../images/banner.png'
+import { NavLink} from 'react-router-dom';
 
     const style = {
         minHeight: 500,
@@ -27,7 +28,7 @@ const Banner = () => {
                         <Typography variant="body1" sx={{lineHeight: 1.5, my: 3, color:'white'}}>
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, expedita inventore ullam alias a molestiae. Exercitationem maiores ab consequuntur! Sit.
                         </Typography>
-                        <MuiButton variant="contained"> Explore More </MuiButton>
+                        <NavLink style={{textDecoration: 'none'}} to="/explore"><MuiButton variant="contained"> Explore More </MuiButton></NavLink>
                         
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6}>

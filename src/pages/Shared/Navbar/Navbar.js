@@ -66,16 +66,20 @@ const Navbar = () => {
       <AppBar   position="static">
         <Toolbar>
           <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Shutter Stock
           </Typography>
             <Box className={navItemContainer}>
                 <Link className={navItem} to="/home"><Button color="inherit">Home</Button></Link>
                 <Link className={navItem} to="/explore"><Button color="inherit">Explore</Button></Link>
-                <Link className={navItem} to="/dashboard"><Button color="inherit">Dashboard</Button></Link>
+                
                 
                 {
-                    user?.email?
+                    user?.email? 
+                    <>
+                    <Link className={navItem} to="/dashboard"><Button color="inherit">Dashboard</Button></Link>
+                    <Button color="secondary"> {user.displayName}</Button>
                     <Button onClick={logOut} color="inherit">Logout</Button>
+                    </>
                     :
                     <NavLink className={navItem} to="/login"><Button color="inherit">Login</Button></ NavLink>
                 }

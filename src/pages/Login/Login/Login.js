@@ -1,11 +1,19 @@
-import {  Button, Container, Grid, TextField, Typography } from '@mui/material';
+import {  Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useHistory } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 import login from '../../../images/login.png'
 import MuiButton from '../../../styleComponent/ButtonStyle';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
+
+    const {user, loginUser,  loading, authError,         signInWithGoogle
+    } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
+
     const handleOnChange = e => {
         const field = e.target.name;
         const value = e.target.value;
@@ -15,7 +23,12 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        e.preventDefauth();
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
+    }
+
+    const handleGoogleSignIn =() => {
+        signInWithGoogle(location, history);
     }
     return (
         <Container style={{marginTop: '50px'}}>
@@ -50,7 +63,12 @@ const Login = () => {
                         style={{textDecoration: 'none'}}>
                             <Button variant="text">New User? Please Register</Button>
                         </NavLink>
+                        {loading && <CircularProgress/> }
+                        {user?.email &&  <Alert severity="success"> User Created Successfully!</Alert>}
+                        {authError && <Alert severity="error">{authError}</Alert>}
                     </form>
+
+                    <MuiButton onClick={handleGoogleSignIn} variant="contained">Google Sign In</MuiButton>
                 </Grid>
             </Grid>
         </Container>

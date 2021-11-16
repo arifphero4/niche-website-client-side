@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
-import LimitedProduct from './LimitedProduct/LimitedProduct';
+import ExploreProducts from '../ExploreProducts/ExploreProducts';
 
 
 const products = [
@@ -51,20 +51,51 @@ const products = [
         details: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto doloremque sapiente neque ullam odit.',
         price: 125
 
-    }
+    },
+    {
+        id: 7,
+        name: 'Canon 800D',
+        img: 'https://rickycell.com/wp-content/uploads/2020/11/CANON-800D-2.jpg',
+        details: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto doloremque sapiente neque ullam odit.',
+        price: 125
+
+    },
+    {
+        id: 8,
+        name: 'Canon 800D',
+        img: 'https://rickycell.com/wp-content/uploads/2020/11/CANON-800D-2.jpg',
+        details: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto doloremque sapiente neque ullam odit.',
+        price: 125
+
+    },
+    {
+        id: 9,
+        name: 'Canon 800D',
+        img: 'https://rickycell.com/wp-content/uploads/2020/11/CANON-800D-2.jpg',
+        details: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto doloremque sapiente neque ullam odit.',
+        price: 125
+
+    },
+    {
+        id: 10,
+        name: 'Canon 800D',
+        img: 'https://rickycell.com/wp-content/uploads/2020/11/CANON-800D-2.jpg',
+        details: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla architecto doloremque sapiente neque ullam odit.',
+        price: 125
+
+    },
     
 ]
-const Product = () => {
+const ExploreProduct = () => {
     return (
         <Container>
-            <h2>this is Product</h2>
             <Grid container spacing={2}>
                {
-                   products.map(product => <LimitedProduct
+                   products.map(product => <ExploreProducts
                         key={product.id}
                         product={product}
                    >      
-                   </LimitedProduct>)
+                   </ExploreProducts>)
                }
 
             </Grid>
@@ -72,4 +103,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default ExploreProduct;
