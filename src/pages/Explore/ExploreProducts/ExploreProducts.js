@@ -5,11 +5,12 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {  CardActionArea, CardActions } from '@mui/material';
 import MuiButton from '../../../styleComponent/ButtonStyle';
+import {Link} from 'react-router-dom';
 
 
 
 const ExploreProducts = ({product}) => {
-    const {name, img, description, price} = product;
+    const {_id,name, img, description, price} = product;
     return (
         <Grid item xs={12} sm={6} md={4}>
             <CardActionArea>
@@ -33,7 +34,7 @@ const ExploreProducts = ({product}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-            <MuiButton variant="contained"> BUY NOW </MuiButton>
+            <Link style={{textDecoration: 'none'}} to={`/orderPlace/${_id}`}> <MuiButton variant="contained"> BUY NOW </MuiButton></Link>
             </CardActions>
         </Grid>
     );

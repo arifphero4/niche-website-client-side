@@ -12,6 +12,7 @@ import Register from './pages/Login/Register/Register';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import MakeProducts from './pages/Dashboard/MakeProducts/MakeProducts';
+import OrderPlace from './pages/Shared/OrderPlace/OrderPlace';
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
             </Route>
             <Route path="/makeProducts">
               <MakeProducts></MakeProducts>
+            </Route>
+            <Route path="/orderPlace/:id">
+              <OrderPlace></OrderPlace>
             </Route>
           </Switch>
         </Router>

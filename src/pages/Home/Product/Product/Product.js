@@ -11,7 +11,7 @@ const Product = () => {
         fetch('http://localhost:5000/limitProducts')
             .then(res => res.json())
             .then(data => setProducts(data));
-    })
+    },[])
     return (
         <Container sx={{my:5}}>
             <h2 style={{textAlign:'center'}}>Top Branded Cameras</h2>

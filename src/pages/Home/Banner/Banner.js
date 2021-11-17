@@ -10,8 +10,8 @@ import { NavLink} from 'react-router-dom';
         height: '100vh', 
         display: 'flex', 
         alignItems:'center',
-        background:`url(${bg})`,
-        backgroundRpeat: 'no-repeat'
+        background:`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${bg}) no-repeat`,
+        backgroundSize: 'cover'
 
     }
     

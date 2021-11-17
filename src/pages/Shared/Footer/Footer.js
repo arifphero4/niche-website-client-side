@@ -23,8 +23,8 @@ const useStyle = makeStyles({
 const Footer = () => {
     const { socialIcon, textColor} = useStyle();
     return (
-        <footer>
-            <Container style={{background:'#263238'}} >
+        <footer style={{background:'#263238'}}>
+            <Container  >
                 <Grid container spacing={3} sx={{ my: 3 }}>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List >
@@ -64,8 +64,9 @@ const Footer = () => {
                         <MuiButton variant="contained">+8065432145</MuiButton>
                     </Grid>
                 </Grid>
-                <Typography className={textColor} sx={{ textAlign: 'center', py: 4, background:'black'}} variant="subtitle2"> Copyright &copy; 2021 All Rights Reserved</Typography>
+                
             </Container>
+            <Typography className={textColor} sx={{ textAlign: 'center', py: 4, background:'black'}} variant="subtitle2"> Copyright &copy; 2021 All Rights Reserved</Typography>
         </footer>
     );
 };
