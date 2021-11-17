@@ -22,6 +22,7 @@ import MyOrders from '../MyOrders/MyOrders';
 import Review from '../Review/Review';
 import Payment from '../Payment/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 240;
 
@@ -72,7 +73,7 @@ function Dashboard(props) {
       <Divider /> 
       </Box> }
 
-      <Link className={navItem} onClick={logOut} to="/makeProducts"><Button> Logout</Button> </Link>
+      <Link className={navItem} onClick={logOut} to="/"><Button> Logout</Button> </Link>
       <Divider />
       
      
@@ -147,18 +148,18 @@ function Dashboard(props) {
           <Route exact path={path}>
             <DashboardHome></DashboardHome>
           </Route>
-          <Route path={`${path}/makeAdmin`}>
+          <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path={`${path}/makeProducts`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/makeProducts`}>
             <MakeProducts></MakeProducts>
-          </Route>
-          <Route path={`${path}/manageProducts`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
             <ManageProducts></ManageProducts>
-          </Route>
-          <Route path={`${path}/manageOrders`}>
+          </AdminRoute>
+          <AdminRoute path={`${path}/manageOrders`}>
             <ManageOrders></ManageOrders>
-          </Route>
+          </AdminRoute>
           <Route path={`${path}/myOrder`}>
             <MyOrders></MyOrders>
           </Route>
