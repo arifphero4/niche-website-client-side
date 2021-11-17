@@ -1,9 +1,10 @@
-import { TextField } from '@mui/material';
+import { Alert, Button, TextField } from '@mui/material';
 import React, { useState } from 'react';
-import MuiButton from '../../../styleComponent/ButtonStyle';
+
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
+    const [success, setSuccess] = useState(false);
 
     const handleOnBlur = e => {
         setEmail(e.target.value)
@@ -19,22 +20,29 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if(data.modifiedCount){
+                    console.log(data);
+                    
+                    setSuccess(true);
+                }
+                
             })
 
         e.preventDefault();
     }
     return (
         <div>
-            <h2>make admin</h2>
+            <h3>Make an Admin</h3>
             <form onSubmit={handleAdminSubmit}>
                 <TextField 
+                sx={{width: '50%'}}
                 label="Email" 
                 type="email"
                 onBlur={handleOnBlur}
-                variant="standard"/>
-                <MuiButton type="submit" variant="contained"> Make Admin</MuiButton>
+                variant="standard"/> 
+                <Button type="submit" variant="contained"> Make Admin</Button>
             </form>
+            {success && <Alert>Made Admin Successfully.</Alert>}
         </div>
     );
 };

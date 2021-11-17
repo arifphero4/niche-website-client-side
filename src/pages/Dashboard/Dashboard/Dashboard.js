@@ -29,7 +29,7 @@ function Dashboard(props) {
   
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-   const {user, logOut} = useAuth();
+   const {user, logOut, admin} = useAuth();
   let {path, url} = useRouteMatch();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -50,6 +50,8 @@ function Dashboard(props) {
       <Divider />
       <Link className={navItem} to={`${url}`}><Button> Dashboard </Button> </Link>
       <Divider />
+      { 
+        admin && <Box>
       <Link className={navItem} to={`${url}/makeAdmin`}><Button> Make Admin </Button> </Link>
       <Divider />
       <Link className={navItem} to={`${url}/makeProducts`}><Button> Add Products</Button> </Link>
@@ -57,13 +59,18 @@ function Dashboard(props) {
       <Link className={navItem} to={`${url}/manageProducts`}><Button>  Manage Products</Button> </Link>
       <Divider />
       <Link className={navItem} to={`${url}/manageOrders`}><Button> Manage All Orders</Button> </Link>
-      <Divider />
+      <Divider /> 
+      </Box> 
+      }
+      { 
+        !admin && <Box>
       <Link className={navItem} to={`${url}/myOrder`}><Button> My Orders</Button> </Link>
       <Divider />
       <Link className={navItem} to={`${url}/review`}><Button> Review</Button> </Link>
       <Divider />
       <Link className={navItem} to={`${url}/payment`}><Button> Payment</Button> </Link>
-      <Divider />
+      <Divider /> 
+      </Box> }
 
       <Link className={navItem} onClick={logOut} to="/makeProducts"><Button> Logout</Button> </Link>
       <Divider />
