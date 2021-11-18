@@ -16,7 +16,7 @@ website link: https://doctors-portal-e8a61.web.app/
 - Firebase
 - Vanilla CSS
 - Material UI
--Sweet Alert
+- Sweet Alert
 
 ## Features
 
