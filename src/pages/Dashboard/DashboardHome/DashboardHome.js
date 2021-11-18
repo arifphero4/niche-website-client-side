@@ -1,9 +1,10 @@
 import React from 'react';
-
+import dashboard from '../../../images/dashboard.png'
 const DashboardHome = () => {
     return (
         <div>
-            <h1>welcome to Dashboard</h1>
+           
+            <img src={dashboard} alt="" width="450px" height="400px" />
         </div>
     );
 };

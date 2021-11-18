@@ -124,6 +124,10 @@ const Navbar = () => {
                         <ListItemText> <Link className={mobileItem}  to="/dashboard">Dashboard</Link> </ListItemText>
                     </ListItem>
                     <Divider />
+                    <ListItem button >
+                        <ListItemText> <Button className={mobileItem} onClick={logOut} color="inherit">Logout</Button></ListItemText>
+                    </ListItem>
+                    <Divider />
                 </List>
                 
                 

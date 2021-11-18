@@ -1,7 +1,7 @@
 import { Container, Grid,  Typography } from '@mui/material';
 import React from 'react';
 import MuiButton from '../../../styleComponent/ButtonStyle';
-import bg from '../../../images/bg.jpg'
+import bg from '../../../images/bg-2.jpg'
 import banner from '../../../images/banner.png'
 import { NavLink} from 'react-router-dom';
 
@@ -23,10 +23,10 @@ const Banner = () => {
                 <Grid container spacing={2} sx={{alignItems: 'center'}}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                         <Typography variant="h4" sx={{fontWeight: 600, color:'white'}}>
-                            Welcome to Fujifilm Corner
+                            Welcome to Shutter Stock
                         </Typography>
                         <Typography variant="body1" sx={{lineHeight: 1.5, my: 3, color:'white'}}>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, expedita inventore ullam alias a molestiae. Exercitationem maiores ab consequuntur! Sit.
+                        Cameras capture special events and preserve memories. The camera helps to create and preserve memories of historical and/or sentimental value. Famous photographs of notable moments and events from history were made possible by the camera.
                         </Typography>
                         <NavLink style={{textDecoration: 'none'}} to="/explore"><MuiButton variant="contained"> Explore More </MuiButton></NavLink>
                         

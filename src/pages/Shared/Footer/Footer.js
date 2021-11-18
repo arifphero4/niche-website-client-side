@@ -38,9 +38,9 @@ const Footer = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List>
-                            <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Services</Typography>
-                            <ListItemText className={textColor}>Emergency Dental Care</ListItemText>
-                            <ListItemText className={textColor}>Check Up</ListItemText>
+                            <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Up Comming</Typography>
+                            <ListItemText className={textColor}>Action Cam</ListItemText>
+                            <ListItemText className={textColor}>Drones</ListItemText>
                             
                         </List>
                     </Grid>
@@ -48,8 +48,9 @@ const Footer = () => {
                     <Grid item xs={12} sm={12} md={6} lg={4}>
                         <List>
                             <Typography variant="h5" sx={{ color: '#E38194', mb: 1 }}>Our Address</Typography>
-                            <ListItemText className={textColor}>New York - 101010 Hudson</ListItemText>
-                            <ListItemText className={textColor}>Yards</ListItemText>
+                            <ListItemText className={textColor}>69 Frere Road, </ListItemText>
+                            <ListItemText className={textColor}>Trust Building, </ListItemText>
+                            <ListItemText className={textColor}>East London</ListItemText>
                         </List>
                         <IconButton className={socialIcon}>
                             <GoogleIcon />
@@ -60,8 +61,8 @@ const Footer = () => {
                         <IconButton className={socialIcon}>
                             <InstagramIcon />
                         </IconButton>
-                        <Typography className={textColor}>Call Now</Typography>
-                        <MuiButton variant="contained">+8065432145</MuiButton>
+                        <Typography className={textColor}>Send Email</Typography>
+                        <MuiButton variant="contained">shutterstock@yahoo.com</MuiButton>
                     </Grid>
                 </Grid>
                 
