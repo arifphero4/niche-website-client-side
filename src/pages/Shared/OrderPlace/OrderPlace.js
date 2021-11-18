@@ -14,7 +14,7 @@ import Footer from "../Footer/Footer";
 
 const OrderPlace = () => {
     const {user} = useAuth();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   
   const [product, setProduct] = useState({});
   const { name, description, price, img } = product;
@@ -37,7 +37,7 @@ const OrderPlace = () => {
     })
         .then(res => res.json())
         .then(data => console.log(data) )
-        
+        reset();
   };
   
 

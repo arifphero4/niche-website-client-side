@@ -12,34 +12,30 @@ const inputStyle = {
 
 const AddReview = () => {
     const {register, handleSubmit, watch, reset} = useForm();
-    const onSubmit = data => {
-        fetch('http://localhost:5000/userReview', {
-            method: 'POST',
-            headers: { 'content-type' : 'appliction/json'},
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result =>{
-                if(result?.insertedId){
-                    alert('successfully add Review');
-                    reset();
-                }
-            })
-            console.log(data);
-    }
+    
+    const onSubmit = (data) =>{
+      fetch('http://localhost:5000/userReview', {
+          method: 'POST',
+          headers: {
+              'content-type' : 'application/json',
+          },
+          body: JSON.stringify(data) 
+      })
+          .then(res => res.json())
+          .then(data => {
+            alert('successfully add Review');
+            console.log(data)} )
+          reset();
+    };
 
     console.log(watch("example"));
 
     return (
         <div>
-            <h2>Please Adregisterd Your Review about Products</h2>
+            <h2>Please Your Review about Products</h2>
             <div className="add-service">
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input 
-                        style={inputStyle}
-                        {...register("name",{required: true})}
-                        placeholder="Enter Your Name"
-                    /> <br />
+                    
                     <input 
                         style={inputStyle}
                         {...register("name",{required: true})}

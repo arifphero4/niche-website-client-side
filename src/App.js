@@ -42,9 +42,9 @@ function App() {
             <Route path="/makeProducts">
               <MakeProducts></MakeProducts>
             </Route>
-            <Route path="/orderPlace/:id">
+            <PrivateRoute path="/orderPlace/:id">
               <OrderPlace></OrderPlace>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>
