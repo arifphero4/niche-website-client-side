@@ -17,7 +17,7 @@ import OrderPlace from './pages/Shared/OrderPlace/OrderPlace';
 
 function App() {
   return (
-    <div >
+    <div className="App">
       <AuthProvider>
         <Router>
           <Switch>

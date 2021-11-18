@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import { Container, Grid } from "@mui/material";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 
 
@@ -41,7 +43,10 @@ const OrderPlace = () => {
 
   
   return (
+    <div>
+       <Navbar></Navbar>
     <Container>
+      <h1>this is Order Place</h1>
       <Grid container spacing={2}>
         <Grid item sx={12} md={6}>
           <Card sx={{ maxWidth: 345 }}>
@@ -75,11 +80,14 @@ const OrderPlace = () => {
             <input  value={user?.email } {...register("email",  )} placeholder="Email"/>
             <input type="text" {...register("city" )} placeholder="City" />
             <input type="text" {...register("country" )}  placeholder="Country"/>
+            <input type="number" value={price} {...register("price" )}  />
             <input type="submit" />
           </form>
         </Grid>
       </Grid>
     </Container>
+    <Footer></Footer>
+    </div>
   );
 };
 

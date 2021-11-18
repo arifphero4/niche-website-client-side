@@ -19,10 +19,10 @@ import MakeProducts from '../MakeProducts/MakeProducts';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import ManageOrders from '../ManageOrders/ManageOrders';
 import MyOrders from '../MyOrders/MyOrders';
-import Review from '../Review/Review';
 import Payment from '../Payment/Payment';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import AddReview from '../Review/AddReview/AddReview';
 
 const drawerWidth = 240;
 
@@ -67,7 +67,7 @@ function Dashboard(props) {
         !admin && <Box>
       <Link className={navItem} to={`${url}/myOrder`}><Button> My Orders</Button> </Link>
       <Divider />
-      <Link className={navItem} to={`${url}/review`}><Button> Review</Button> </Link>
+      <Link className={navItem} to={`${url}/addReview`}><Button>Add Review</Button> </Link>
       <Divider />
       <Link className={navItem} to={`${url}/payment`}><Button> Payment</Button> </Link>
       <Divider /> 
@@ -163,8 +163,8 @@ function Dashboard(props) {
           <Route path={`${path}/myOrder`}>
             <MyOrders></MyOrders>
           </Route>
-          <Route path={`${path}/review`}>
-            <Review></Review>
+          <Route path={`${path}/addReview`}>
+            <AddReview></AddReview>
           </Route>
           <Route path={`${path}/payment`}>
             <Payment></Payment>
